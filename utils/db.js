@@ -1,7 +1,8 @@
 import Database from 'better-sqlite3';
 import path from 'path';
+import { fileURLToPath } from 'url';
 
-const db = new Database(path.resolve(__dirname, '../data/bot.db'));
+const db = new Database(path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../data/bot.db'));
 
 db.prepare(`
   CREATE TABLE IF NOT EXISTS activity_logs (
@@ -15,4 +16,4 @@ db.prepare(`
   )
   `).run();
 
-module.exports = db;
+export default db;
