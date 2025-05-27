@@ -1,5 +1,6 @@
 import quests from "./quests.js";
 import level from "./level.js";
+import drops from "./drops.js";
 
 export default async function sendEmbeds(activities, playerData, client) {
   const logChannel = client.channels.cache.get('934688054818517093');
@@ -20,6 +21,12 @@ export default async function sendEmbeds(activities, playerData, client) {
       else{
         continue;
       }
+    }
+    else if(activity.type == "drop"){
+      if (activity.text.includes("I found a book: ")){
+        continue;
+      }
+      embed = await drops(activity);
     }
     else{
       continue;
