@@ -18,6 +18,7 @@ export default async function processData(playerData) {
       }
 
       activity.type = activityType(activity.text);
+      activity.player = data.player;
 
       db.prepare('INSERT INTO activity_logs (player, date, details, text, type) VALUES (?, ?, ?, ?, ?)')
         .run(data.player, activity.date, activity.details, activity.text, activity.type);

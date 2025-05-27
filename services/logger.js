@@ -11,5 +11,6 @@ export default async function logger(client) {
   const newActivities = await processData(playerData);
 
   console.log('Sending embeds...');
-  sendEmbeds(newActivities, playerData, client);
+  await sendEmbeds(newActivities, playerData, client);
+  console.log('Done.')
 };

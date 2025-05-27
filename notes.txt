@@ -1,0 +1,22 @@
+playerData structure
+{
+  player: 'cj enjoyer',
+  profile: {
+    magic: 2478763,
+    questsstarted: 2,
+    totalskill: 2395,
+    questscomplete: 311,
+    questsnotstarted: 38,
+    totalxp: 121011504,
+    ranged: 10590286,
+    activities: [Array],
+    skillvalues: [Array],
+    name: 'cj enjoyer',
+    rank: '260,169',
+    melee: 63912412,
+    combatlevel: 134,
+    loggedIn: 'false'
+  },
+  quests: { quests: [Array], loggedIn: 'false' }
+}
+
