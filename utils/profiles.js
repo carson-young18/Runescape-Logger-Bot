@@ -7,8 +7,6 @@ export default async function getProfiles () {
 
     const profileURL = `https://apps.runescape.com/runemetrics/profile/profile?user=${playerURL}&activities=20`;
     const questURL = `https://apps.runescape.com/runemetrics/quests?user=${playerURL}`;
-
-    console.log(`Fetching ${player}`);
     
     try{
       const [profile, quest] = await Promise.all([
