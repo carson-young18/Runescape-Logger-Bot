@@ -7,6 +7,7 @@ if(!confirm){
   process.exit(0);
 }
 
-const deleted = db.prepare('DELETE FROM activity_logs').run();
+db.prepare('DELETE FROM activity_logs').run();
+db.prepare("DELETE FROM sqlite_sequence WHERE name = 'activity_logs'").run();
 
-console.log(`Deleted ${deleted.changes} rows from db`);
+console.log(`Database cleared.`);
