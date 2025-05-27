@@ -23,7 +23,7 @@ export default async function sendEmbeds(activities, playerData, client) {
       }
     }
     else if(activity.type == "drop"){
-      if (activity.text.includes("I found a book: ")){
+      if (activity.text.includes("I found a book: ") || activity.text.includes("ancient effigy")){
         continue;
       }
       embed = await drops(activity);

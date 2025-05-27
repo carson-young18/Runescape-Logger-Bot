@@ -1,3 +1,8 @@
+import { readFile } from 'fs/promises';
+const exceptions = JSON.parse(
+  await readFile(new URL('../data/exceptions.json', import.meta.url), 'utf-8')
+);
+
 export default async function parseItem(text) {
   let name = "";
 
@@ -20,7 +25,11 @@ export default async function parseItem(text) {
 
   name.replaceAll(".", "");
 
-
+  for(const item of exceptions){
+    if(name == item.logName){
+      name = item.gameName;
+    }
+  }
 
   return name;
 };

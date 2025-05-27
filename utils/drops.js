@@ -1,5 +1,5 @@
 import { EmbedBuilder } from "discord.js";
-import fetchAndResize from "../resize.js";
+import fetchAndResize from "./resize.js";
 import parseItem from "./item-name.js";
 import { readFile } from 'fs/promises';
 const items = JSON.parse(
@@ -14,7 +14,7 @@ export default async function drops(activity) {
   for(const i of items){
     try{
       if(i.name.toLowerCase() == item.name.toLowerCase()){
-        if (i['is_on_ge']){
+        if (i.is_on_ge){
           item.tradeable = true;
           item.id = i.id;
           break;
@@ -37,7 +37,6 @@ export default async function drops(activity) {
     item.price = price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") + ' GP'
   }
   else{
-    console.log(`${item.name} : ${item.id}`)
     item.price = `Untradeable`;
   }
 
@@ -46,7 +45,6 @@ export default async function drops(activity) {
     attachment = await fetchAndResize(`https://services.runescape.com/m=itemdb_rs/obj_sprite.gif?id=${item.id}`);
   }
   catch{
-    console.log(item.name, item.id);
     attachment = await fetchAndResize(`https://runescape.wiki/images/Golden_loot_beam_1.png?11278`);
   }
 
