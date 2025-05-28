@@ -1,5 +1,5 @@
 import { EmbedBuilder } from "discord.js";
-import fetchAndResize from "./resize.js";
+import fetchAndResize from "../resize.js";
 
 export default async function quests(activity, playerQuests) {  
   let playerQP = 0;

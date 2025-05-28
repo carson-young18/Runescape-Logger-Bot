@@ -1,6 +1,4 @@
-import quests from "./quests.js";
-import level from "./level.js";
-import drops from "./drops.js";
+import * as embeds from './embeds/index.js'
 
 export default async function sendEmbeds(activities, playerData, client) {
   const logChannel = client.channels.cache.get('934688054818517093');
@@ -10,13 +8,13 @@ export default async function sendEmbeds(activities, playerData, client) {
 
     if(activity.type == "quest"){
       const playerQuests = playerData.find(p => p.player === activity.player).quests;
-      embed = await quests(activity, playerQuests);
+      embed = await embeds.quests(activity, playerQuests);
     }
     else if(activity.type == "level"){
       const skillLevel = parseInt(activity.details.split("level ")[1]);
       if (skillLevel % 10 == 0 || skillLevel == 99){
         const totalLevel = playerData.find(p => p.player === activity.player).profile.totalskill;
-        embed = await level(activity, totalLevel);
+        embed = await embeds.level(activity, totalLevel);
       }
       else{
         continue;
@@ -26,7 +24,7 @@ export default async function sendEmbeds(activities, playerData, client) {
       if (activity.text.includes("I found a book: ") || activity.text.includes("ancient effigy")){
         continue;
       }
-      embed = await drops(activity);
+      embed = await embeds.drops(activity);
     }
     else{
       continue;

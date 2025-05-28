@@ -1,9 +1,9 @@
 import { EmbedBuilder } from "discord.js";
-import fetchAndResize from "./resize.js";
-import parseItem from "./item-name.js";
+import fetchAndResize from "../resize.js";
+import parseItem from "../item-name.js";
 import { readFile } from 'fs/promises';
 const items = JSON.parse(
-  await readFile(new URL('../data/items.json', import.meta.url), 'utf-8')
+  await readFile(new URL('../../data/items.json', import.meta.url), 'utf-8')
 );
 
 export default async function drops(activity) {

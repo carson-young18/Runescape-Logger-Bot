@@ -26,7 +26,7 @@ export default async function parseItem(text) {
   name.replaceAll(".", "");
 
   for(const item of exceptions){
-    if(name == item.logName){
+    if(name.toLowerCase() == item.logName.toLowerCase()){
       name = item.gameName;
     }
   }
