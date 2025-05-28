@@ -12,6 +12,9 @@ export default function activityType(text) {
   else if(text.includes('I found')){
     type = 'drop';
   }
+  else if(text.includes('XP')){
+    type = 'xp';
+  }
   else{
     type = 'misc';
   }

@@ -1,0 +1,118 @@
+[
+  {
+    "name" : "Attack",
+    "id" : 0
+  },
+  {
+    "name" : "Defence",
+    "id" : 1
+  },
+  {
+    "name" : "Strength",
+    "id" : 2
+  },
+  {
+    "name" : "Constitution",
+    "id" : 3
+  },
+  {
+    "name" : "Ranged",
+    "id" : 4
+  },
+  {
+    "name" : "Prayer",
+    "id" : 5
+  },
+  {
+    "name" : "Magic",
+    "id" : 6
+  },
+  {
+    "name" : "Cooking",
+    "id" : 7
+  },
+  {
+    "name" : "Woodcutting",
+    "id" : 8
+  },
+  {
+    "name" : "Fletching",
+    "id" : 9
+  },
+  {
+    "name" : "Fishing",
+    "id" : 10
+  },
+  {
+    "name" : "Firemaking",
+    "id" : 11
+  },
+  {
+    "name" : "Crafting",
+    "id" : 12
+  },
+  {
+    "name" : "Smithing",
+    "id" : 13
+  },
+  {
+    "name" : "Mining",
+    "id" : 14
+  },
+  {
+    "name" : "Herblore",
+    "id" : 15
+  },
+  {
+    "name" : "Agility",
+    "id" : 16
+  },
+  {
+    "name" : "Thieving",
+    "id" : 17
+  },
+  {
+    "name" : "Slayer",
+    "id" : 18
+  },
+  {
+    "name" : "Farming",
+    "id" : 19
+  },
+  {
+    "name" : "Runescrafting",
+    "id" : 20
+  },
+  {
+    "name" : "Hunter",
+    "id" : 21
+  },
+  {
+    "name" : "Construction",
+    "id" : 22
+  },
+  {
+    "name" : "Summoning",
+    "id" : 23
+  },
+  {
+    "name" : "Dungeoneering",
+    "id" : 24
+  },
+  {
+    "name" : "Divination",
+    "id" : 25
+  },
+  {
+    "name" : "Invention",
+    "id" : 26
+  },
+  {
+    "name" : "Archaeology",
+    "id" : 27
+  },
+  {
+    "name" : "Necromancy",
+    "id" : 28
+  }
+]
