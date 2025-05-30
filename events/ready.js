@@ -1,5 +1,6 @@
 import cron from 'node-cron';
 import logger from '../services/logger.js';
+import updateItems from '../utils/update-items.js';
 
 export default (client) => {
   console.log(`Logged in as ${client.user.tag}`);
@@ -8,7 +9,6 @@ export default (client) => {
 
   cron.schedule('* * * * *', async () => {
     try{
-      console.log('Logging new activities...');
       await logger(client);
     }
     catch (error){
@@ -16,16 +16,16 @@ export default (client) => {
     }
   });
 
-  // cron.schedule('0 0 * * *', async () => {
-  //   try{
-  //     console.log('Updating cached data...');
-  //   }
-  //   catch (error){
-  //     console.log(`Error: ${error}`);
-  //   }
-  // },
-  // {
-  //   timezone: 'UTC'
-  // });
+  cron.schedule('0 5 * * *', async () => {
+    try{
+      await updateItems();
+    }
+    catch (error){
+      console.log(`Error: ${error}`);
+    }
+  },
+  {
+    timezone: 'UTC'
+  });
 };
 

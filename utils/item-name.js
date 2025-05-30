@@ -23,7 +23,7 @@ export default async function parseItem(text) {
     return 'null';
   }
 
-  name.replaceAll(".", "");
+  name = name.replaceAll(".", "");
 
   for(const item of exceptions){
     if(name.toLowerCase() == item.logName.toLowerCase()){

@@ -16,4 +16,13 @@ db.prepare(`
   )
   `).run();
 
+db.prepare(`
+  CREATE TABLE IF NOT EXISTS profile_fetches (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    timestamp TEXT DEFAULT CURRENT_TIMESTAMP,
+    response_time_s TEXT,
+    profiles_received INTEGER,
+    profile_errors INTEGER
+  )`).run();
+
 export default db;
