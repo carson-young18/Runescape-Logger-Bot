@@ -28,6 +28,5 @@ export default async function processData(playerData) {
     }
   }
 
-  console.log(`New activities logged: ${newActs}`);
   return newActivities;
 };

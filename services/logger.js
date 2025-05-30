@@ -1,16 +1,15 @@
-import fetch from 'node-fetch';
 import getProfiles from '../utils/profiles.js';
 import processData from '../utils/process.js';
 import sendEmbeds from '../utils/embeds.js';
 
 export default async function logger(client) {
-  console.log('Fetching player profiles...');
+  console.log('Logging activities...');
+  const start = Date.now();
+
   const playerData = await getProfiles();
-
-  console.log('Processing data...');
   const newActivities = await processData(playerData);
-
-  console.log('Sending embeds...');
   await sendEmbeds(newActivities, playerData, client);
-  console.log('Done.')
+
+  const time = Date.now() - start;
+  console.log(`New Activities: ${newActivities.length} | Time: ${time}ms`);
 };
