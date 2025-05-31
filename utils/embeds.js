@@ -3,7 +3,7 @@ import pet from './embeds/pet.js';
 import skips from './skip-drops.js';
 
 export default async function sendEmbeds(activities, playerData, client) {
-  const logChannels = [client.channels.cache.get('934688054818517093'), client.channels.cache.get('1285378272972243076')];
+  const logChannels = [client.channels.cache.get('934688054818517093'), client.channels.cache.get('1378380823472115763')];
 
   for(const activity of activities){
     let embed;
