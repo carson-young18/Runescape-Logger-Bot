@@ -1,7 +1,8 @@
 const skips = [
   "I found a book: ",
   "ancient effigy",
-  "dragon helm"
+  "dragon helm",
+  "crystal triskelion"
 ];
 
 export default skips;

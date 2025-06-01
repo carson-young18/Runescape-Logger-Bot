@@ -42,7 +42,7 @@ export default async function drops(activity) {
 
   let attachment;
   try{
-    attachment = await fetchAndResize(`https://services.runescape.com/m=itemdb_rs/obj_sprite.gif?id=${item.id}`);
+    attachment = await fetchAndResize(`https://services.runescape.com/m=itemdb_rs/obj_big.gif?id=${item.id}`);
   }
   catch{
     attachment = await fetchAndResize(`https://runescape.wiki/images/Golden_loot_beam_1.png?11278`);

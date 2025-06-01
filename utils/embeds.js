@@ -54,10 +54,10 @@ export default async function sendEmbeds(activities, playerData, client) {
 
     for(const channel of logChannels){
       try{
-        channel.send(embed);
+        await channel.send(embed);
       }
       catch{
-        console.log(`Could not reach channel: ${channel}`);
+        console.log(`Could not reach channel: ${channel.name}`);
       }
     }
   }
