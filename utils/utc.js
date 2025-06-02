@@ -10,7 +10,7 @@ export default function utcDate (date) {
 
   const month = months[monthStr];
 
-  const utcDate = new Date(Date.UTC(parseInt(year), month, parseInt(day), parseInt(hours), parseInt(minutes))).toISOString();
+  const utcDate = new Date(Date.UTC(parseInt(year), month, parseInt(day), parseInt(hours) - 1, parseInt(minutes))).toISOString();
 
   return utcDate;
 }
