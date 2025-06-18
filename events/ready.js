@@ -7,7 +7,7 @@ export default (client) => {
 
   logger(client);
 
-  cron.schedule('* * * * *', async () => {
+  cron.schedule('*/3 * * * *', async () => {
     try{
       await logger(client);
     }
