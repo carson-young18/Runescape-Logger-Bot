@@ -134,3 +134,11 @@ dist
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# Ignore local SQLite DB
+bot.db
+bot.db-journal
+*.sqlite
+*.sqlite3
+*.db
+*.db-journal
