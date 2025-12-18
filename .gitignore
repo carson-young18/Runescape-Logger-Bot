@@ -142,3 +142,6 @@ bot.db-journal
 *.sqlite3
 *.db
 *.db-journal
+
+#Ignore items.json
+data/items.json
