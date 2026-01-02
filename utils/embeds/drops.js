@@ -2,33 +2,16 @@ import { EmbedBuilder } from "discord.js";
 import fetchAndResize from "../resize.js";
 import parseItem from "../item-name.js";
 import { readFile } from 'fs/promises';
+import findItem from "../find-item.js";
+
 const items = JSON.parse(
   await readFile(new URL('../../data/items.json', import.meta.url), 'utf-8')
 );
 
 export default async function drops(activity) {
-  let item = {};
+  const itemName = await parseItem(activity.text);
 
-  item.name = await parseItem(activity.text);
-
-  for(const i of items){
-    try{
-      if(i.name.toLowerCase() == item.name.toLowerCase()){
-        if (i.is_on_ge){
-          item.tradeable = true;
-          item.id = i.id;
-          break;
-        }
-        else{
-          item.tradeable = false;
-          item.id = i.id;
-        }
-      }
-    }
-    catch{
-      continue;
-    }
-  }
+  let item = await findItem(itemName);
 
   if (item.tradeable){
     const priceSearch = await fetch(`https://secure.runescape.com/m=itemdb_rs/api/graph/${item.id}.json`);
